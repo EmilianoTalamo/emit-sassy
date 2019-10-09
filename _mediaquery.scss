@@ -1,0 +1,134 @@
+// Settings for Emit Sassy Media Queries
+
+$mfIsDefault: true; // Set this to true if your site will be designed in mobile first, this will default all media queries to be called with mobile-first rules.
+
+// Custom resolutions for media queries. If you are unsure, leave this as it is
+$emitMQ: (
+	phoneW: (max: 599px), // Smartphones max width (min is 0)
+	phoneH: (max: 800px),  // Smartphones max height (min is 0)
+	tabletW: (min: 600px, max: 768px), // Tablet min and max width
+	tabletH: (min: 960px, max: 1024px), // Tablet min and max height
+	laptop: (min: 1025px, max: 1366px), // Laptop min and max width
+	desktop: (min: 1367px, max: 1920px), // Desktop min and max width
+	highdef: (min: 1921px) // UHD screen min width (max is infinity)
+);
+
+// End of settings, don't touch anything below here.
+
+@function map-deep-get($map, $keys...) {
+	@each $key in $keys {
+		$map: map-get($map, $key);
+	}
+	@return $map;
+}
+
+// Mixins. Some mixins accept the mobile first argument. It will set the media query to work for mobile first if it's true. If you don't pass any argument, the default value (set by the $mfIsDefault variable) will be used.
+
+
+// RESPONSIVE: All mobile devices (tablets and mobile)
+@mixin mqResponsive {
+	@media (max-width: map-deep-get($emitMQ, 'tabletW', 'max')) {
+		@content;
+	}
+}
+
+// Computer: All non-mobile devices (laptops and desktop PCs)
+@mixin mqComputer {
+	@media (min-width: map-deep-get($emitMQ, 'laptop', 'min')) {
+		@content;
+	}
+}
+
+// CUSTOM MIN: Custom media query that will trigger when the resolution is bigger than the argument passed whenever the mixin is called
+@mixin mqCustomMin($width) {
+	@media (min-width: $width) {
+		@content;
+	}
+}
+
+// CUSTOM MIN: Custom media query that will trigger when the resolution is smaller than the argument passed whenever the mixin is called
+@mixin mqCustomMax($width) {
+	@media (max-width: $width) {
+		@content;
+	}
+}
+
+// SMARTPHONES - Accepts the mobile-first argument (it's pretty dumb to use it anyway)
+@mixin mqP($mf: $mfIsDefault) {
+	@if($mf) {
+		@content;
+	}
+	@else {
+		@media (max-width: map-deep-get($emitMQ, 'phoneW', 'max')) {
+			@content;
+		}
+	}
+}
+
+// SMARTPHONES IN LANDSCAPE: By default, phones use the tablet mq if in landscape mode. You can use this if you want to use rules specifically for a mobile phone in this orientation
+@mixin mqPL {
+		@media (max-width: map-deep-get($emitMQ, 'phoneH', 'max')) and (max-height: map-deep-get($emitMQ, 'phoneW', 'max')) and (orientation: landscape) {
+			@content;
+		}
+}
+
+// TABLETS - Accepts the mobile-first argument
+@mixin mqT($mf: $mfIsDefault) {
+	@if($mf) {
+		@media (min-width: map-deep-get($emitMQ, 'tabletW', 'min')) {
+			@content;
+		}
+	}
+	@else {
+		@media (max-width: map-deep-get($emitMQ, 'tabletH', 'max')) {
+			@content;
+		}
+	}
+}
+
+// TABLETS LANDSCAPE: You don't usually need this, the TABLETS media query handles this, but you can use it if you need a special ruleset for tablets in this orientation
+@mixin mqTL {
+	@media (min-width: map-deep-get($emitMQ, "tabletH", "min")) and (max-width: map-deep-get($emitMQ, 'tabletH', 'max' )) and (orientation: landscape) {
+		@content;
+	}
+}
+
+// LAPTOPS: Low resolution screens - Accepts the mobile-first argument
+@mixin mqL($mf: $mfIsDefault) {
+	@if($mf) {
+		@media (min-width: map-deep-get($emitMQ, 'laptop', 'min')) {
+			@content;
+		}
+	}
+	@else {
+		@media (max-width: map-deep-get($emitMQ, 'laptop', 'max')) {
+			@content;
+		}
+	}
+}
+
+// DESKTOP: High resolution screens - Accepts the mobile-first argument
+@mixin mqD($mf: $mfIsDefault) {
+	@if($mf) {
+		@media (min-width: map-deep-get($emitMQ, 'desktop', 'min')) {
+			@content;
+		}
+	}
+	@else {
+		@media (max-width: map-deep-get($emitMQ, 'desktop', 'max')) {
+			@content;
+		}
+	}
+}
+
+// HIGH DEF: Ultra high resolution screens - Accepts the mobile-first argument
+@mixin mqH($mf: $mfIsDefault) {
+	@if($mf) {
+		@media (min-width: map-deep-get($emitMQ, 'highdef', 'min')) {
+			@content;
+		}
+	}
+	@else {
+		@content;
+	}
+}
