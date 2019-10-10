@@ -5,7 +5,7 @@ $mfIsDefault: true; // Set this to true if your site will be designed in mobile 
 // Custom resolutions for media queries. If you are unsure, leave this as it is
 $emitMQ: (
 	phoneW: (max: 599px), // Smartphones max width (min is 0)
-	phoneH: (max: 800px),  // Smartphones max height (min is 0)
+	phoneH: (max: 950px),  // Smartphones max height (min is 0)
 	tabletW: (min: 600px, max: 768px), // Tablet min and max width
 	tabletH: (min: 960px, max: 1024px), // Tablet min and max height
 	laptop: (min: 1025px, max: 1366px), // Laptop min and max width
