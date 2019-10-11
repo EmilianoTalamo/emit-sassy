@@ -1,0 +1,101 @@
+{
+	"RESPONSIVE mq": {
+		"prefix": "mqresponsive",
+		"body": [
+			"@include mqResponsive{",
+			"  ${1}",
+			"}"
+		],
+		"description": "RESPONSIVE mq"
+	},
+	"COMPUTER mq": {
+		"prefix": "mqcomputer",
+		"body": [
+			"@include mqComputer{",
+			"  ${1}",
+			"}"
+		],
+		"description": "COMPUTER mq"
+	},
+	"CUSTOM MIN mq (MF)": {
+		"prefix": "mqcmin",
+		"body": [
+			"@include mqCustomMin(${1:1}px){",
+			"  ${2}",
+			"}"
+		],
+		"description": "CUSTOM MIN mq (MF)"
+	},
+	"CUSTOM MAX mq (DF)": {
+		"prefix": "mqcmax",
+		"body": [
+			"@include mqCustomMax(${1:1}px){",
+			"  ${2}",
+			"}"
+		],
+		"description": "CUSTOM MAX mq (DF)"
+	},
+	"SMARTPHONES mq": {
+		"prefix": "mqp",
+		"body": [
+			"@include mqP{",
+			"  ${1}",
+			"}"
+		],
+		"description": "SMARTPHONES mq"
+	},
+	"SMARTPHONES LANDSCAPE mq": {
+		"prefix": "mqpl",
+		"body": [
+			"@include mqPL{",
+			"  ${1}",
+			"}"
+		],
+		"description": "SMARTPHONES LANDSCAPE mq"
+	},
+	"TABLET mq": {
+		"prefix": "mqt",
+		"body": [
+			"@include mqT{",
+			"  ${1}",
+			"}"
+		],
+		"description": "TABLET mq"
+	},
+	"TABLET LANDSCAPE mq": {
+		"prefix": "mqtl",
+		"body": [
+			"@include mqTL{",
+			"  ${1}",
+			"}"
+		],
+		"description": "TABLET LANDSCAPE mq"
+	},
+	"LAPTOP mq": {
+		"prefix": "mql",
+		"body": [
+			"@include mqL{",
+			"  ${1}",
+			"}"
+		],
+		"description": "LAPTOP mq"
+	},
+	"DESKTOP mq": {
+		"prefix": "mqd",
+		"body": [
+			"@include mqD{",
+			"  ${1}",
+			"}"
+		],
+		"description": "DESKTOP mq"
+	},
+	"HD mq": {
+		"prefix": "mqh",
+		"body": [
+			"@include mqH{",
+			"  ${1}",
+			"}"
+		],
+		"description": "HD mq"
+	}
+}
