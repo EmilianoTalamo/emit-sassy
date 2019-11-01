@@ -27,7 +27,7 @@ $emitMQ: (
 
 // RESPONSIVE: All mobile devices (tablets and mobile)
 @mixin mqResponsive {
-	@media (max-width: map-deep-get($emitMQ, 'tabletW', 'max')) {
+	@media (max-width: map-deep-get($emitMQ, 'tabletH', 'max')) {
 		@content;
 	}
 }
