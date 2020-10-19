@@ -1,0 +1,44 @@
+{
+  "name": "emit-sassy",
+  "version": "1.0.0",
+  "description": "Emit sass scaffold",
+  "main": "gulpfile.js",
+  "scripts": {
+    "prod": "gulp",
+    "dev": "gulp css-watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EmilianoTalamo/emit-sassy.git"
+  },
+  "author": "Emiliano Tálamo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EmilianoTalamo/emit-sassy/issues"
+  },
+  "homepage": "https://github.com/EmilianoTalamo/emit-sassy#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-cli": "^2.3.0",
+    "gulp-notify": "^3.2.0"
+  },
+  "dependencies": {
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-postcss": "^9.0.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^4.1.0",
+    "gulp-sourcemaps": "^2.6.5",
+    "node-sass": "^4.14.1",
+    "postcss-font-awesome": "^0.4.0"
+  },
+  "browserslist": [
+    "> 2%",
+    "last 3 years",
+    "not IE 11",
+    "not IE_Mob 11",
+    "not ie_mob 10",
+    "not IE 10",
+    "not IE 9"
+  ]
+}
