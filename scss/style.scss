@@ -1,5 +1,8 @@
 /* Vendors */
 @import "./vendors/emit-mediaquery";
+@import "./vendors/normalize.css";
+@import "./vendors/emit-normalize";
+@import "./vendors/animate.css";
 
 /* Configs */
 @import "./variables";
@@ -7,6 +10,7 @@
 @import "./fonts";
 
 /* Globals */
+@import "animations.scss";
 @import "global.scss";
 
 /* Partials */
