@@ -27,15 +27,14 @@ const cssdev = () => {
 	return gulp.src(config.paths.scss.src)
 	.pipe(sourcemaps.init()) // Initialization of sourcemaps
 	.pipe(sass()
-	.on('error', 
-		notify.onError({ title: "SASS compile error" })
-	)
+		.on('error', 
+			notify.onError({ title: "SASS compile error" })
+		)
 	) // Compile SASS
 	.pipe(compilePostCSS()) // Compile PostCSS
 	.pipe(sourcemaps.write()) // Write sourcemaps
 	.pipe(rename(config.paths.scss.dest.filename)) // Set filename
 	.pipe(gulp.dest(config.paths.scss.dest.folder)) // Write file
-	.pipe(notify("CSS Compiled! 🎉"))
 }
 
 const cssprod = () => {
@@ -54,6 +53,7 @@ const cssprod = () => {
 
 gulp.task('css-watch', () => {
 	cssdev();
+	console.info("Watching...")
 	gulp.watch([config.paths.scss.watch], cssdev)
 })
 
