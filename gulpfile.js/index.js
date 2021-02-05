@@ -45,7 +45,7 @@ const cssprod = () => {
 		)
 	) // Compile SASS
 	.pipe(compilePostCSS())
-	.pipe(cleanCSS())
+	.pipe(cleanCSS({ level:{1: { specialComments: 0 }}}))
 	.pipe(rename(config.paths.scss.dest.filename))
 	.pipe(gulp.dest(config.paths.scss.dest.folder))
 	.pipe(notify("CSS Compiled! 🎉"))
