@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  emit-sassy-node:
+    build: .
+    image: emit-sassy-node
+    container_name: emit-sassy-node
+    tty: true
+    restart: "no"
+    volumes:
+      - .:/var/www
