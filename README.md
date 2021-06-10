@@ -138,7 +138,9 @@ h1{
 
 ## Compilation
 
-[Gulp](https://gulpjs.com/) is used to compile the SCSS files. So make sure you run `npm i` to install all the dependencies, and check that Gulp is running correctly with `gulp -v`. NodeJS version 12 (at least) is recommended.
+[Gulp](https://gulpjs.com/) is used to compile the SCSS files. So make sure you run `npm i` to install all the dependencies, and check that Gulp is running correctly with `gulp -v`. NodeJS version 14 is recommended.
+
+You might need to install `gulp-cli` globally if your command line can't find the `gulp` command. This can be done by running `npm install --global gulp-cli`.
 
 Vendor prefixing and PostCSS compilation will be done automatically.
 
