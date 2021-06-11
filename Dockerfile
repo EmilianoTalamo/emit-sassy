@@ -7,12 +7,12 @@ RUN apt-get install libnotify-bin -y
 # Get default directory
 WORKDIR /var/www
 
+# Remove current node_modules folder
+RUN rm -rf node_modules
+
 COPY ./package*.json ./
 
 COPY * ./
-
-# Remove current node_modules folder
-RUN rm -rf node_modules
 
 # Install NodeJS dependencies
 RUN npm i
