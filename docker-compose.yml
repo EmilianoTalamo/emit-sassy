@@ -5,6 +5,7 @@ services:
     build: .
     image: emit-sassy-node
     container_name: emit-sassy-node
+    entrypoint: sh -c "npm i"
     tty: true
     restart: "no"
     volumes:
