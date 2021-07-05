@@ -181,3 +181,10 @@ Paths can be defined in the [`gulpfile.js/config.js`](gulpfile.js/config.js) fil
 PostCSS modules can be added inside the `CompilePostCSS` function, in the [`gulpfile.js/index.js`](gulpfile.js/index.js) file.
 
 These modules can be configured there as well. Refer to their documentation to do so.
+
+## Docker
+You can use the Docker image provided to use Gulp without needing NodeJS in your host computer.
+
+Simply run `docker-compose up -d` to build the image and to run the container.
+
+Once you have your container running, you can enter to the container's bash and run `npm run dev` or `npm run prod`.
