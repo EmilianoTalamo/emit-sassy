@@ -188,3 +188,6 @@ You can use the Docker image provided to use Gulp without needing NodeJS in your
 Simply run `docker-compose up -d` to build the image and to run the container.
 
 Once you have your container running, you can enter to the container's bash and run `npm run dev` or `npm run prod`.
+
+## libnotify
+If you are on Linux (or using WSL), you might need to install the `libnotify-bin` package on your system to prevent some warnings during compilation.
