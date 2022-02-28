@@ -30,6 +30,7 @@
     "gulp-sass": "^4.1.0",
     "gulp-sourcemaps": "^2.6.5",
     "postcss-font-awesome": "https://github.com/vaimdev/postcss-font-awesome",
+    "ttf2woff2": "^4.0.4",
     "sass": "*"
   }
 }
