@@ -5,8 +5,9 @@ services:
     build: .
     image: emit-sassy-node
     container_name: emit-sassy-node
-    entrypoint: sh -c "npm i"
+    # entrypoint: bash -c "source ~/.bashrc && rm -rf node_modules && npm i && npm run prod"
+    # entrypoint: bash -c "source ~/.bashrc && rm -rf node_modules && npm i && npm run dev"
     tty: true
     restart: "no"
     volumes:
-      - .:/var/www
+      - .:/sass:rw

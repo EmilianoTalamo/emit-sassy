@@ -1,19 +1,23 @@
-FROM node:14
+FROM debian:bullseye-slim
 
-# Container dependencies
-RUN apt-get update -y
-RUN apt-get install libnotify-bin -y
+WORKDIR /sass
+COPY . .
 
-# Get default directory
-WORKDIR /var/www
+# Replace shell with bash so we can source files
+RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 
-# Remove current node_modules folder
-RUN rm -rf node_modules
+# Install dependencies
+RUN apt-get update -y \
+	&& apt-get install -y -q libnotify-bin curl git python3
 
-COPY ./package*.json ./
+# Install NVM (Node Version Manager)
+RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+RUN source ~/.bashrc && nvm install 14 && npm i --global gulp-cli
 
-COPY * ./
+ENTRYPOINT source ~/.bashrc && rm -rf node_modules && npm i && npm run prod
 
 # Install NodeJS dependencies
-RUN npm i
-RUN npm install --global gulp-cli
+
+# CMD source ~/.bashrc \
+# 	&& npm  i -v \
+# 	&& npm i --global gulp-cli
