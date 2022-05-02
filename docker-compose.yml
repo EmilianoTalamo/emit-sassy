@@ -3,10 +3,9 @@ version: '3'
 services:
   emit-sassy-node:
     build: .
-    image: emit-sassy-node
+    image: emit/sassy:2.0
     container_name: emit-sassy-node
-    entrypoint: sh -c "npm i"
     tty: true
     restart: "no"
     volumes:
-      - .:/var/www
+      - .:/sass:rw

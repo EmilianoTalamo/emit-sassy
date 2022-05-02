@@ -183,8 +183,10 @@ PostCSS modules can be added inside the `CompilePostCSS` function, in the [`gulp
 These modules can be configured there as well. Refer to their documentation to do so.
 
 ## Docker
-You can use the Docker image provided to use Gulp without needing NodeJS in your host computer.
+You can use the Docker image provided in this repository to compile your SASS stylesheets.
+Simply run the `docker-compose up` command, and your compiled `style.css` file will be ready when the process finishes.
 
-Simply run `docker-compose up -d` to build the image and to run the container.
+You can modify the entrypoint of the `Dockerfile` file to run the dev compiler indefinitely, if you want.
 
-Once you have your container running, you can enter to the container's bash and run `npm run dev` or `npm run prod`.
+## libnotify
+If you are on Linux (or using WSL), you might need to install the `libnotify-bin` package on your system to prevent some warnings during compilation.

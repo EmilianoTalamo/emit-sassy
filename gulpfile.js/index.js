@@ -6,7 +6,7 @@ const
 	notify = require('gulp-notify'),
 	rename = require('gulp-rename'), // Renamer
 	sourcemaps = require('gulp-sourcemaps'), // Sourcemaps support
-	sass = require('gulp-sass'), // SCSS compiler
+	sass = require('gulp-sass')(require('sass')), // SCSS compiler
 	postcss = require('gulp-postcss'), // PostCSS compiler
 	cleanCSS = require('gulp-clean-css') // CSS Minifier
 
